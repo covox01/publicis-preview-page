@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    list-style: none;
+}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+a:visited {
+    color: white;
+}
+
+h1, 
+h2, 
+.dropdown-name,
+.version, 
+.version-item,
+.size,
+.size-item
+    {
+        font-weight: 500;
+        font-family: helvetica;
+        font-size: 14px;
+        color: rgb(63, 63, 63);
+        letter-spacing: .8px;
+    }
+
+h2 {
+    font-size: 16px;
+    color: rgb(63, 63, 63);
+    letter-spacing: .5px;
+}
+
+
+/* --- Publicis Logo --- */
+
+    #publicis-logo {
+        fill: white;
+        min-width: 150px;
+        max-width: 150px;
+        margin-left: 80px;
+        z-index: 10;
+    }
+
+    #publicis-lionhead {
+        position: fixed;
+        min-width: 900px;
+        max-width: 1400px;
+        right: -20%;
+        top: 35%;
+        opacity: .08;
+    }
+
+/* --- Red Banner Top --- */
+
+    #red-banner {
+        width: 100%;
+        height: 120px;
+        position:fixed;
+        top: 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        z-index: 40;
+    }
+
+    .banner-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #d62130;
+        width: 100%;
+        opacity: .95;
+    }
+
+    .banner-gradient {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: .95;
+        background: linear-gradient(rgba(231, 231, 231, 0.021), rgba(94, 39, 39, 0.027), rgba(94, 39, 39, 0.164), rgba(53, 19, 19, 0.151));
+    }
+
+    .banner-gradient-2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to left, rgba(231, 231, 231, 0.021), rgba(94, 39, 39, 0.007), rgba(165, 56, 56, 0.055), rgba(133, 25, 25, 0.5));
+    }
+
+    .container1 {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        z-index: 20;
+    }
+
+    .red-banner-container {
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+        width: 95%;
+    }
+
+    .dropdown-container {
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+    }
+
+    .dropdown-name {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        font-size: 14px;
+        border: 1px solid green;
+    }
+
+    .name-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        flex-flow: row;
+        z-index: 30;
+    }
+
+    .client-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px 5px 0 0;
+        background: rgba(59, 59, 59, 0.363);
+        letter-spacing: 1px;
+    }
+
+    .client-name h1 {
+        color: white;
+        letter-spacing: 1.5px;
+        font-size: 15px;
+    }
+
+    .fa-file-download {
+        font-size: 25px;
+        color: rgb(7, 6, 6);
+        padding-right: 7px;
+    }
+
+/* --- version and size styling--- */
+
+    #version-dropdown, #size-dropdown {
+        position: relative;
+    }
+
+    #version-dropdown {
+        border-radius: 0px 0 0px 5px;
+    }
+
+    #size-dropdown {
+        border-radius: 0 0px 5px 0;
+    }
+
+    #version-dropdown, #size-dropdown {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 220px;
+        padding-top: 2px;
+        background: rgb(247, 247, 247);
+        cursor: pointer;
+    }
+
+    .dropdown-name {
+        padding-left: 20px;
+    }
+
+    #version-sort-down, #size-sort-down {
+        width: 10px;
+        right: 10px;
+        position: absolute;
+    }
+
+    .sort-1 {
+        fill: #d62130;
+    }
+
+    #version-options, .size, .version-item {
+        color: rgb(63, 63, 63);
+        letter-spacing: .5px;
+        font-size: 15px;
+    }
+
+    #version-options {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 220px;
+        background: white;
+        border-radius: 0 0 5px 5px;
+        z-index: 10;
+        box-shadow: 0px 2px 5px rgba(172, 172, 172, 0.699);
+        overflow:hidden;
+    }
+
+    #size-options {
+        position: absolute;
+        display: none;
+        top: 0px;
+        left: 0;
+        right: 0;
+        width: 220px;
+        background: white;
+        border-radius: 0 0 5px 0;
+        z-index: 10;
+        box-shadow: 0px 2px 5px rgba(172, 172, 172, 0.699);
+        overflow:hidden;
+    }
+
+    .version-item, .size-item {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        padding-left: 20px;
+        border: rgb(196, 196, 196);
+    }
+
+    .version-item:hover, .size-item:hover {
+        background: rgb(226, 226, 226);
+    }
+
+    #campaign-name-container {
+        position: fixed;
+        width: 100%;
+        top: 120px;
+        display: flex;
+        justify-content: center;
+        background: white;
+        box-shadow: 0px 2px 3px rgba(194, 193, 193, 0.336);
+        /* border: 1px solid green; */
+    }
+    .campaign-name {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(rgb(255, 255, 255), white, rgb(241, 241, 241));
+        height: 35px;
+    }
+
+    .campaign-name h2 {
+        font-size: 15px;
+    }
+
+/* --- Banner Content ---  */
+
+    .content {
+        width: 100%;
+        overflow: auto;
+        margin-top: 170px;
+    }
+
+    .banner-container-1 {
+        margin: 50px auto auto;
+        width: 80%;
+        max-width: 1100px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .banner-container-2 {
+        margin: 50px auto auto;
+        width: 80%;
+        max-width: 1150px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .banner-margin {
+        margin: 50px 0 50px 0;
+    }
+
+    /* --- 300x250 --- */
+
+        #banner-300x250-container {
+            display: flex;
+            justify-content: center;
+            width: 340px;
+            height: 350px;
+            background: rgba(231, 231, 231, 0.301);
+            background: linear-gradient(rgba(245, 245, 245, 0.644), rgba(241, 241, 241, 0.74));
+            border-radius: 20px;
+            box-shadow: 2px 0px 7px rgba(196, 196, 196, 0.774);
+            /* border: 1px solid green; */
+        }
+
+        #banner-300x250 {
+            width: 300px;
+            height: 250px;
+            margin: 20px;
+            background: no-repeat url(../images/image300x250-3.jpg);
+            background-size: 100%;
+            box-shadow: 2px 2px 7px rgba(143, 143, 143, 0.76);
+        }
+
+    /* --- 300x600 --- */
+
+        #banner-300x600-container {
+            display: flex;
+            justify-content: center;
+            width: 340px;
+            height: 700px;
+            background: rgba(231, 231, 231, 0.301);
+            background: linear-gradient(rgba(245, 245, 245, 0.644), rgba(241, 241, 241, 0.74));
+            border-radius: 20px;
+            box-shadow: 2px 0px 7px rgba(196, 196, 196, 0.774);
+        }
+
+        #banner-300x600 {
+            width: 300px;
+            height: 600px;
+            margin: 20px;
+            background: no-repeat url(../images/image300x600-3.jpg);
+            background-size: 100%;
+            box-shadow: 2px 2px 7px rgba(143, 143, 143, 0.76);
+        }
+
+    /* --- 160x600 --- */
+        #banner-160x600-container {
+            display: flex;
+            justify-content: center;
+            width: 200px;
+            height: 700px;
+            background: rgba(231, 231, 231, 0.301);
+            background: linear-gradient(rgba(245, 245, 245, 0.644), rgba(241, 241, 241, 0.74));
+            border-radius: 20px;
+            box-shadow: 2px 0px 7px rgba(196, 196, 196, 0.774);
+        }
+
+        #banner-160x600 {
+            width: 160px;
+            height: 600px;
+            margin: 20px;
+            background: no-repeat url(../images/image160x600-3.jpg);
+            background-size: 100%;
+            box-shadow: 2px 2px 7px rgba(143, 143, 143, 0.76);
+        }
+
+
+        .mCSB_dragger_bar { 
+            background-color: green; 
+            width: 100px;
+        }
+
+
+
+
+/* ---------- Graveyard ----------- */
+
+/* .fa-sort-down {
+    position: absolute;
+    top: 1px;
+    height: auto;
+    right: 10px;
+    font-size: 20px;
+    color: #d62130;
+} */

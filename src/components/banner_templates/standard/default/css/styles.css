@@ -1,0 +1,70 @@
+#viewport {
+	overflow: hidden;
+	background-color: #fff;
+	position: absolute;
+}
+
+#border {
+	pointer-events: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 1px solid black;
+}
+
+#clickTag {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	cursor: pointer;
+}
+
+.adSize {
+	width: -width-px; 
+	height: -height-px;
+}
+
+
+/* -- CTA -- */
+
+.ctaSize{
+	width: 73px;
+	height: 23px;
+}
+
+#ctaCon{
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	position: absolute;
+}
+
+#cta{
+	background: no-repeat url("../images/cta.png");
+	background-size: contain;
+	position:absolute;
+	left: 0px; 
+	top: 0px;
+}
+
+#sheen{
+	background: no-repeat url("../images/sheen.png");
+	background-size: contain;
+	position: absolute;
+	width: 31px;
+	height: 46px;
+	left: 0px;
+	top: 0px;
+}
+
+/*
+	// Template
+
+	#element {
+		background: no-repeat url("../images/.png");
+		background-size: contain;
+		position:absolute;
+		left: 0px; 
+		top: 0px;
+	}
+*/

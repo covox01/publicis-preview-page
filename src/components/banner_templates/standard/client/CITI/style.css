@@ -1,0 +1,36 @@
+.bannerSize {
+	width: 300px;
+	height: 250px;
+}
+
+#blue {
+	background: #003087;
+}
+
+#cta {
+	background: url(img/cta.png);
+}
+
+#background {
+	background: url(img/background.jpg);
+}
+
+#text3 {
+	background: url(img/text3.png);
+}
+
+#text2 {
+	background: url(img/text2.png);
+}
+
+#text1 {
+	background: url(img/text1.png);
+}
+
+#logo {
+	background: url(img/logo.png);
+}
+
+#legal {
+	background: url(img/legal.png);
+}
