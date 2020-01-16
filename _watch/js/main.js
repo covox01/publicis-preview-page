@@ -124,8 +124,19 @@ function dropdownSelect() {
             }
         })
 
+        var collapse = false
     // Click campaign name to collapse header
-        // $(".version")
+        $("#campaign-name-container").on('click', function(){
+            
+            if (!collapse) {
+                collapse = true
+                gsap.to([$("#red-banner"), $(".content")], {duration: .4, y: -120, ease: Power2.easeInOut})
+            } else if (collapse){
+                collapse = false
+                gsap.to([$("#red-banner"), $(".content")], {duration: .4, y: 0, ease: Power2.easeInOut})
+            }
+            
+        })
 }
 
   init();
