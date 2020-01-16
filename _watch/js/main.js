@@ -29,46 +29,57 @@ $(document).ready(function() {
 
 function dropdownSelect() {
     var versionDropdown = document.getElementById("version-dropdown");
-    var versionOptions = document.getElementById("version-options")
+    var versionOptions = document.getElementById("version-options");
+    var versionOptions
+    // var sizeDropdown = document.getElementsByClassName("size");
     var sizeDropdown = document.getElementById("size-dropdown");
+    var sizeOptions = document.getElementById("size-options");
     var versionDropdownClicked = false
     var sizeDropdownClicked = false
      // gsap.set(versionDropdown, {clip:"rect(0px, 300px, 0px, 0px);"}); 
     
     TweenMax.set("#version-sort-down", {rotation: 0, force3D: false})
 
-    // Animation functions for both Version Dropdowns and Sizes Dropdowns
+    // Animation functions for both Version Dropdowns and Sizes Dropdowns when clicked
         function showVersions(){
-        // --- Once clicked, animate arrow.
-            var tl = new TimelineMax()
-            gsap.to("#version-sort-down", {duration: .2, rotation: 180, transformOrigin: "center", opacity: .5});
-            gsap.to(versionDropdown, {duration: .2, borderBottomLeftRadius: "1px"});
-         // --- Once clicked, show options for sizes.
+            gsap.set(versionOptions, {opacity: 1, y: 0})
             $("#version-options").css("display", "block")
+            var showVersions = new TimelineMax()
+            showVersions
+                .to("#version-sort-down", {duration: .2, rotation: 180, transformOrigin: "center", opacity: .5}, "sync")
+                .to(".version", {duration: .2, borderBottomLeftRadius: "1px"}, "sync")
+                .from(versionOptions, {duration: .2, opacity: 0, y: -30}, "sync")
         }
 
         function hideVersions(){
-        // --- Once clicked, animate arrow.
-            gsap.to("#version-sort-down", {duration: .2, rotation: 0, transformOrigin: "center", opacity: 1});
-            gsap.to(versionDropdown, {duration: .2, borderBottomLeftRadius: "5px"});
-         // --- Hide version options
-            $("#version-options").css("display", "none")
+            var hideVersion = new TimelineMax()
+            hideVersion
+                .to("#version-sort-down", {duration: .2, rotation: 0, transformOrigin: "center", opacity: 1}, "sync")
+                .to(".version", {duration: .2, borderBottomLeftRadius: "5px"}, "sync")
+                .to(versionOptions, {duration: .1, ease: Power2.easeIn, opacity: 0, y: -30}, "sync")
+                .set(versionOptions, {display: "none"})
         }
 
         function showSizes(){
-        // --- Once clicked, animate arrow.
-            gsap.to("#size-sort-down", {duration: .2, rotation: 180, opacity: .5});
-            gsap.to(sizeDropdown, {duration: .2, borderBottomRightRadius: "1px"});
-        // --- Once clicked, show options for sizes.
+            gsap.set(sizeOptions, {opacity: 1, y: 0})
             $("#size-options").css("display", "block")
+            var showSizes = new TimelineMax()
+            showSizes
+                .to("#size-sort-down", {duration: .2, rotation: 180, opacity: .5}, "sync")
+                .to(".size", {duration: .2, borderBottomRightRadius: "1px"}, "sync")
+                .from(sizeOptions, {duration: .2, opacity: 0, y: -30}, "sync")
         }
 
         function hideSizes(){
+            var hideSizes = new TimelineMax()
         // --- Once clicked, animate arrow.
-            gsap.to("#size-sort-down", {duration: .2, rotation: 0, opacity: 1});
-            gsap.to(sizeDropdown, {duration: .2, borderBottomRightRadius: "5px"});
+            hideSizes
+                .to("#size-sort-down", {duration: .2, rotation: 0, opacity: 1}, "sync")
+                .to(".size", {duration: .2, borderBottomRightRadius: "5px"}, "sync")
+                .to(sizeOptions, {duration: .1, opacity: 0, y: -30}, "sync")
+                .set(sizeOptions, {display: "none"})
         // --- Hide size options
-            $("#size-options").css("display", "none")
+            // $("#size-options").css("display", "none")
         }
 
     // Version options reveals if dropdown is clicked
@@ -113,6 +124,8 @@ function dropdownSelect() {
             }
         })
 
+    // Click campaign name to collapse header
+        // $(".version")
 }
 
   init();
