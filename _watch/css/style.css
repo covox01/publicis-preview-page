@@ -14,9 +14,9 @@ a:visited {
 h1, 
 h2, 
 .dropdown-name,
-.version, 
+.version-name, 
 .version-item,
-.size,
+.size-name,
 .size-item
     {
         font-weight: 500;
@@ -115,7 +115,7 @@ h2 {
         justify-content: space-between;
     }
 
-    .version {
+    .version-name {
         display: flex;
         flex-flow: column;
         justify-content: center;
@@ -128,7 +128,7 @@ h2 {
         z-index: 100;
     }
 
-    .size {
+    .size-name {
         display: flex;
         flex-flow: column;
         justify-content: center;
