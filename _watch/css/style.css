@@ -124,7 +124,6 @@ h2 {
         width: 100%;
         background: white;
         border-radius: 0 0 0px 5px;
-        /* border: 1px solid green; */
         z-index: 100;
     }
 
@@ -326,7 +325,7 @@ h2 {
             height: 350px;
             background: rgba(231, 231, 231, 0.301);
             background: linear-gradient(rgba(245, 245, 245, 0.644), rgba(241, 241, 241, 0.74));
-            border-radius: 20px;
+            border-radius: 5px;
             box-shadow: 2px 0px 7px rgba(196, 196, 196, 0.774);
             /* border: 1px solid green; */
         }
@@ -349,7 +348,7 @@ h2 {
             height: 700px;
             background: rgba(231, 231, 231, 0.301);
             background: linear-gradient(rgba(245, 245, 245, 0.644), rgba(241, 241, 241, 0.74));
-            border-radius: 20px;
+            border-radius: 5px;
             box-shadow: 2px 0px 7px rgba(196, 196, 196, 0.774);
         }
 
@@ -370,7 +369,7 @@ h2 {
             height: 700px;
             background: rgba(231, 231, 231, 0.301);
             background: linear-gradient(rgba(245, 245, 245, 0.644), rgba(241, 241, 241, 0.74));
-            border-radius: 20px;
+            border-radius: 5px;
             box-shadow: 2px 0px 7px rgba(196, 196, 196, 0.774);
         }
 
