@@ -27,6 +27,7 @@ $(document).ready(function() {
     // -- Version Vars
         var versionDropdown = document.getElementById("version-dropdown");
         var versionOptions = document.getElementById("version-options");
+        var versionItem = document.getElementsByClassName("version-item")
         var versionSortDown = document.getElementById("version-sort-down")
         var versionName = document.getElementsByClassName("version-name")
     // -- Size Vars
@@ -82,10 +83,6 @@ $(document).ready(function() {
         // Version options reveals if dropdown is clicked
             $(versionDropdown).on('click', function(e) {
                 e.preventDefault()
-
-                
-
-
                 if (!versionDropdownClicked){
                     $(versionDropdown).addClass("open")
                     versionDropdownClicked = true
@@ -97,6 +94,13 @@ $(document).ready(function() {
                     hideVersions()
                 }
             });
+
+            $(versionItem).on('click', function(e) {
+                e.preventDefault()
+                var dataId = $(this).attr('data-id');
+                console.log(dataId)
+                // $(".version-name p").css()
+            })
 
         // Size options reveals if size dropdown is clicked
             $(sizeDropdown).on('click', function(e) {
@@ -111,7 +115,6 @@ $(document).ready(function() {
                     hideSizes()
                 }
             });
-
         
 
         // If user clicks outside of dropdown menu it disappears
