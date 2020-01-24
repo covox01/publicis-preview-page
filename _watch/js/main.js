@@ -24,6 +24,9 @@ $(document).ready(function() {
     }); 
 
     function dropdownSelect() {
+
+        var dataId 
+        var dataSize
     // -- Version Vars
         var versionDropdown = document.getElementById("version-dropdown");
         var versionOptions = document.getElementById("version-options");
@@ -33,6 +36,7 @@ $(document).ready(function() {
     // -- Size Vars
         var sizeDropdown = document.getElementById("size-dropdown");
         var sizeOptions = document.getElementById("size-options");
+        var sizeItem = document.getElementsByClassName("size-item")
         var sizeSortDown = document.getElementById("size-sort-down")
         var sizeName = document.getElementsByClassName("size-name")
         var versionDropdownClicked = false
@@ -97,10 +101,11 @@ $(document).ready(function() {
 
             $(versionItem).on('click', function(e) {
                 e.preventDefault()
-                var dataId = $(this).attr('data-id');
+                dataId = $(this).attr('data-id');
                 console.log(dataId)
-                // $(".version-name p").css()
-            })
+                $(".version-name p").text(dataId)
+
+            });
 
         // Size options reveals if size dropdown is clicked
             $(sizeDropdown).on('click', function(e) {
@@ -115,6 +120,14 @@ $(document).ready(function() {
                     hideSizes()
                 }
             });
+
+            $(sizeItem).on('click', function(e) {
+                e.preventDefault()
+                dataSize = $(this).attr('data-size');
+                console.log(dataId)
+                $(".size-name p").text(dataSize)
+
+            })
         
 
         // If user clicks outside of dropdown menu it disappears
