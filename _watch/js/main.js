@@ -121,20 +121,21 @@ $(document).ready(function() {
             $(sizeItem).on('click', function(e) {
                 e.preventDefault()
                 dataSize = $(this).attr('data-size');
-                console.log(dataId)
+                console.log(dataSize)
                 $(".size-name p").text(dataSize)
+
+                $(".banner-margin a").not(dataSize).css("display", "none")
             })
-        
 
         // If user clicks outside of dropdown menu it disappears
-        $('.trigger').on('click', function(){
-            if(versionDropdownClicked === true || sizeDropdownClicked === true) {
-                versionDropdownClicked = false
-                sizeDropdownClicked = false
-                hideSizes()
-                hideVersions()
-            }
-        })
+            $('.trigger').on('click', function(){
+                if(versionDropdownClicked === true || sizeDropdownClicked === true) {
+                    versionDropdownClicked = false
+                    sizeDropdownClicked = false
+                    hideSizes()
+                    hideVersions()
+                }
+            })
     }
     
     function collapseHeader(){
@@ -154,9 +155,6 @@ $(document).ready(function() {
     function init() {
         dropdownSelect();
         collapseHeader();
-        AOS.init({
-
-        }, console.log("works"));
     }
     init();
 });
