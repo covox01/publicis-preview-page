@@ -7,8 +7,16 @@
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+#size-options a:visited {
+    color: rgb(63, 63, 63);
+}
+
+a {
+    text-decoration: none;
+}
+
 a:visited {
-    color: white;
+    text-decoration: none;
 }
 
 h1, 
@@ -231,25 +239,10 @@ h2 {
         right: 0;
         width: 220px;
         background: white;
-        /* border-radius: 0 0 0 5px; */
         z-index: 10;
         box-shadow: 0px 2px 5px rgba(172, 172, 172, 0.699);
         overflow:hidden;
     }
-
-    /* #size-options {
-        position: absolute;
-        display: none;
-        top: 0px;
-        left: 0;
-        right: 0;
-        width: 220px;
-        background: white;
-        border-radius: 0 0 5px 0;
-        z-index: 10;
-        box-shadow: 0px 2px 5px rgba(172, 172, 172, 0.699);
-        overflow:hidden;
-    } */
 
     .version-item, .size-item {
         display: flex;
@@ -286,6 +279,13 @@ h2 {
         font-size: 15px;
     }
 
+/* --- Scroll Logic --- */
+
+    .banner-anchor {
+        cursor: default;
+
+    }
+
 /* --- Banner Content ---  */
 
     .content {
@@ -318,7 +318,7 @@ h2 {
 
     /* --- 300x250 --- */
 
-        #banner-300x250-container {
+        .banner-300x250-container {
             display: flex;
             justify-content: center;
             width: 340px;
@@ -341,7 +341,7 @@ h2 {
 
     /* --- 300x600 --- */
 
-        #banner-300x600-container {
+        .banner-300x600-container {
             display: flex;
             justify-content: center;
             width: 340px;
@@ -362,7 +362,7 @@ h2 {
         }
 
     /* --- 160x600 --- */
-        #banner-160x600-container {
+        .banner-160x600-container {
             display: flex;
             justify-content: center;
             width: 200px;

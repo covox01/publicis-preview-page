@@ -81,9 +81,6 @@ $(document).ready(function() {
                     .set(sizeOptions, {display: "none"})
             }
 
-        // Update Version Name
-
-
         // Version options reveals if dropdown is clicked
             $(versionDropdown).on('click', function(e) {
                 e.preventDefault()
@@ -98,13 +95,12 @@ $(document).ready(function() {
                     hideVersions()
                 }
             });
-
+        
+        // Version updates in the dropdown
             $(versionItem).on('click', function(e) {
                 e.preventDefault()
                 dataId = $(this).attr('data-id');
-                console.log(dataId)
                 $(".version-name p").text(dataId)
-
             });
 
         // Size options reveals if size dropdown is clicked
@@ -121,12 +117,12 @@ $(document).ready(function() {
                 }
             });
 
+        // Size gets updated in the dropdown
             $(sizeItem).on('click', function(e) {
                 e.preventDefault()
                 dataSize = $(this).attr('data-size');
                 console.log(dataId)
                 $(".size-name p").text(dataSize)
-
             })
         
 
@@ -158,6 +154,9 @@ $(document).ready(function() {
     function init() {
         dropdownSelect();
         collapseHeader();
+        AOS.init({
+
+        }, console.log("works"));
     }
     init();
 });

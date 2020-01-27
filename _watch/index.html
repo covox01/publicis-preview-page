@@ -8,6 +8,7 @@
     <title>Client Preview Page - Task Runner</title>
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.0.1_min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/libs/jquery.mCustomScrollbar.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -60,15 +61,15 @@
                                 <p>Sizes</p>
                             </div>
                             <ul id="size-options">
-                                <li class="size-item" data-size="160 x 600" id="size1">
-                                    <p>160 x 600</p>
-                                </li>
-                                <li class="size-item" data-size="300 x 250" id="size2">
-                                    <p>300 x 250</p>
-                                </li>
-                                <li class="size-item" data-size="300 x 600" id="size3">
-                                    <p>300 x 600</p>
-                                </li>
+                                <a href="#160x600" class="size-item" data-size="160x600" id="size1">
+                                    <p>160x600</p>
+                                </a>
+                                <a href="#300x250" class="size-item" data-size="300x250" id="size2">
+                                    <p>300x250</p>
+                                </a>
+                                <a href="#300x600" class="size-item" data-size="300x600" id="size3">
+                                    <p>300x600</p>
+                                </a>
                             </ul>
                             <svg id="size-sort-down" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 44.34 25.33">
@@ -144,19 +145,20 @@
     </svg>
     <main class="content trigger mCustomScrollbar">
         <div class="banner-container-1">
-            <div id="banner-160x600-container" class="banner-margin">
+            <div id="160x600" data-aos="fade-up" class="banner-margin banner-160x600-container">
                 <div id="banner-160x600"></div>
             </div>
-            <div id="banner-300x250-container" class="banner-margin">
+            <div id="300x250" class="banner-margin banner-300x250-container">
                 <div id="banner-300x250"></div>
             </div>
-            <div id="banner-300x600-container" class="banner-margin">
+            <div id="300x600" class="banner-margin banner-300x600-container">
                 <div id="banner-300x600"></div>
             </div>
         </div>
     </main>
     <script src="js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="https://kit.fontawesome.com/afb17cb5fc.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/main.js"></script>
 
 </body>
