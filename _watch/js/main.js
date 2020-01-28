@@ -41,6 +41,8 @@ $(document).ready(function() {
         var sizeName = document.getElementsByClassName("size-name")
         var versionDropdownClicked = false
         var sizeDropdownClicked = false
+
+        var bannerCard = document.getElementsByClassName('banner-card')
         
         TweenMax.set(versionSortDown, {rotation: 0, force3D: false})
 
@@ -122,9 +124,20 @@ $(document).ready(function() {
                 e.preventDefault()
                 dataSize = $(this).attr('data-size');
                 console.log(dataSize)
+            // Updates the dropdown name
                 $(".size-name p").text(dataSize)
 
-                $(".banner-margin a").not(dataSize).css("display", "none")
+            // Removes the other banners except for the one 
+                $(bannerCard).removeClass('display-none')
+                $(bannerCard).not(document.getElementById(dataSize)).addClass('display-none')
+                
+            })
+
+        // Version is selected
+            $(versionItem).on('click', function(e) {
+                var dataVersion = document.getElementsByClassName('banner-card')
+                e.preventDefault();
+                $(bannerCard).removeClass('display-none')
             })
 
         // If user clicks outside of dropdown menu it disappears

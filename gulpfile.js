@@ -8,6 +8,7 @@
     const zip                                           = require('gulp-zip');
     const plumber                                       = require('gulp-plumber');
     const jsonTransform                                 = require('gulp-json-transform');
+    const babel                                         = require('gulp-babel')
 
 /* _ Node _ */
     const del                                           = require('del');
@@ -178,6 +179,21 @@
         //
     }
 
+//-- gulp --//
+
+function convertES6 (){
+    gulp.task('scripts', function() {
+        return gulp.src(
+          [
+          'node_modules/babel-polyfill/dist/polyfill.js',
+          'js/*.js'
+          ])
+          .pipe(babel({presets: ['es2015']}))
+          .pipe(gulp.dest('compiled'))
+    });
+}
+
+
 //-- watch --//
     function init_watchFiles(done) {
         src([`${dir.working}/**/*`])
@@ -196,7 +212,7 @@
         // watch(`${dir.working}/**/*.js`).on('change', series(init_watchFiles, browserSync.reload))
         watch(`${dir.watch}/**/*.html`).on('change', series(init_watchFiles, browserSync.reload))
         watch(`${dir.watch}/**/*.css`).on('change', series(init_watchFiles, browserSync.reload))
-        watch(`${dir.watch}/**/*.js`).on('change', series(init_watchFiles, browserSync.reload))
+        watch(`${dir.watch}/**/*.js`).on('change', series(init_watchFiles, convertES6, browserSync.reload))
         cb();
     }
 
