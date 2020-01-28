@@ -130,7 +130,6 @@ $(document).ready(function() {
             // Removes the other banners except for the one 
                 $(bannerCard).removeClass('display-none')
                 $(bannerCard).not(document.getElementById(dataSize)).addClass('display-none')
-                
             })
 
         // Version is selected
