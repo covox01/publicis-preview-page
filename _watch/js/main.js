@@ -1,27 +1,27 @@
 $(document).ready(function() {
 
-     $.getJSON( "preview_connect.json", function( data ) {
-        console.log(data);
+    //  $.getJSON( "preview_connect.json", function( data ) {
+    //     console.log(data);
         
-        data = data.preview_connect;
+    //     data = data.preview_connect;
         
-        $("title").html(data.Agency);
-        $(".client-name h1").html(data.Client);
-        $("#campaign-name-container h2").html(data.Campaign);
+    //     $("title").html(data.Agency);
+    //     $(".client-name h1").html(data.Client);
+    //     $("#campaign-name-container h2").html(data.Campaign);
 
-        $.each( data.Units, function( key, Units_val ) {
+    //     $.each( data.Units, function( key, Units_val ) {
 
-            $("#version-options").append("<li id='" + Units_val.Version_Name + "' class='version-item'> <p>" + Units_val.Version_Name + "</p></li>")
+    //         $("#version-options").append("<li id='" + Units_val.Version_Name + "' class='version-item'> <p>" + Units_val.Version_Name + "</p></li>")
 
-            $.each(Units_val.Sizes, function(key, Sizes_val){
-                $('#size-options').append("<li id='" + Sizes_val + "' class='size-item'> <p>" + Sizes_val.size.width + "x" + Sizes_val.size.height + "</p></li>")
-                $('.banner-container-1').append(
-                    "<div id='" + Sizes_val.file + "' class='banner-margin'> <iframe class='iframed' frameBorder='0' width='" + Sizes_val.size.width + "' height='" + Sizes_val.size.height + "' src='"+ data.File_Path + "/" + Units_val.Version_Name + "/" + Sizes_val.file + "'></iframe></li>"
-                )    
-                // $('#iframeWindow').onload = function() {}
-            })
-        });
-    }); 
+    //         $.each(Units_val.Sizes, function(key, Sizes_val){
+    //             $('#size-options').append("<li id='" + Sizes_val + "' class='size-item'> <p>" + Sizes_val.size.width + "x" + Sizes_val.size.height + "</p></li>")
+    //             $('.banner-container-1').append(
+    //                 "<div id='" + Sizes_val.file + "' class='banner-margin'> <iframe class='iframed' frameBorder='0' width='" + Sizes_val.size.width + "' height='" + Sizes_val.size.height + "' src='"+ data.File_Path + "/" + Units_val.Version_Name + "/" + Sizes_val.file + "'></iframe></li>"
+    //             )    
+    //             // $('#iframeWindow').onload = function() {}
+    //         })
+    //     });
+    // }); 
 
     function dropdownSelect() {
 
@@ -54,7 +54,9 @@ $(document).ready(function() {
                     .to(versionSortDown, {duration: .2, rotation: 180, transformOrigin: "center", opacity: .5}, "sync")
                     .to(versionName, {duration: .2, borderBottomLeftRadius: "1px"}, "sync")
                     .from(versionOptions, {duration: .2, opacity: 0, y: -30}, "sync")
-            }
+				}
+
+			// Hide the Versions
 
             function hideVersions(){
                 var hideVersion = new TimelineMax()
@@ -65,6 +67,8 @@ $(document).ready(function() {
                     .set(versionOptions, {display: "none"})
             }
 
+			// Show the Sizes
+
             function showSizes(){
                 gsap.set(sizeOptions, {opacity: 1, y: 0, display: "block"})
                 var showSizes = new TimelineMax()
@@ -72,7 +76,9 @@ $(document).ready(function() {
                     .to(sizeSortDown, {duration: .2, rotation: 180, opacity: .5}, "sync")
                     .to(sizeName, {duration: .2, borderBottomRightRadius: "1px"}, "sync")
                     .from(sizeOptions, {duration: .2, opacity: 0, y: -30}, "sync")
-            }
+				}
+				
+			// Hide the sizes
 
             function hideSizes(){
                 var hideSizes = new TimelineMax()
@@ -83,7 +89,8 @@ $(document).ready(function() {
                     .set(sizeOptions, {display: "none"})
             }
 
-        // Version options reveals if dropdown is clicked
+		  // Version options reveals if dropdown is clicked
+		  
             $(versionDropdown).on('click', function(e) {
                 e.preventDefault()
                 if (!versionDropdownClicked){
@@ -98,7 +105,8 @@ $(document).ready(function() {
                 }
             });
         
-        // Version updates in the dropdown
+		  // Version updates in the dropdown
+		  
             $(versionItem).on('click', function(e) {
                 e.preventDefault()
                 dataId = $(this).attr('data-id');
@@ -132,7 +140,8 @@ $(document).ready(function() {
                 $(bannerCard).not(document.getElementById(dataSize)).addClass('display-none')
             })
 
-        // Version is selected
+		  // When version is selected, the version name gets updated
+		  
             $(versionItem).on('click', function(e) {
                 var dataVersion = document.getElementsByClassName('banner-card')
                 e.preventDefault();
